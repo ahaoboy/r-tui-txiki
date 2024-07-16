@@ -1,4 +1,4 @@
-An example running r-tui with txiki
+An example running [r-tui](https://github.com/ahaoboy/r-tui) with [txiki](https://github.com/saghul/txiki.js)
 
 
 ## build
