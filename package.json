@@ -5,14 +5,16 @@
   "main": "dist/index.js",
   "types": "dist/index.d.js",
   "scripts": {
-    "build": "esbuild ./src/index.tsx --bundle --outdir=dist --platform=node --format=esm --minify --define:process.env.NODE_ENV='\"production\"' --sourcemap",
-    "dev": "esbuild ./src/index.tsx --bundle --outdir=dist --platform=node --format=esm --minify --define:process.env.NODE_ENV='\"production\"' --sourcemap -w"
+    "build": "esbuild ./src/*.tsx --bundle --outdir=dist --platform=node --format=esm --minify --define:process.env.NODE_ENV='\"production\"' --sourcemap",
+    "dev": "esbuild ./src/*.tsx --bundle --outdir=dist --platform=node --format=esm --minify --define:process.env.NODE_ENV='\"production\"' --sourcemap -w"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@r-tui/ui": "0.1.6",
+    "@r-tui/share": "0.1.6",
+    "@r-tui/terminal": "0.1.6",
     "react": "^18.3.1"
   },
   "devDependencies": {
