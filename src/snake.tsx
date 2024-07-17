@@ -1,8 +1,8 @@
+import "./polyfill"
 import { choice, type Color } from "@r-tui/share"
-import { getTerminalShape } from "@r-tui/terminal/dist"
-import { onInput, Box, } from "@r-tui/ui"
+import { getTerminalShape } from "@r-tui/terminal"
+import { onInput, Box, render, } from "@r-tui/ui"
 import React, { useState, useRef, useEffect } from "react"
-
 
 const initSnakeLen = 10
 const speed = 100
@@ -200,3 +200,8 @@ export default function SnakeGame() {
     </Box>
   )
 }
+
+render(<SnakeGame />, {
+  fps: 30,
+  trim: false,
+})

@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react"
-import { Box, useReadLine } from "@r-tui/ui"
+import "./polyfill"
+import React, { useEffect, useState } from "react"
+import { Box, render, useReadLine } from "@r-tui/ui"
 import { spawn } from "./polyfill"
 
 export default function App() {
@@ -34,3 +35,8 @@ export default function App() {
     </Box>
   )
 }
+
+render(<App />, {
+  fps: 30,
+  trim: true,
+})

@@ -1,6 +1,6 @@
-import { onInput, Left, Right, Up, Down, Box } from "@r-tui/ui"
+import "./polyfill"
+import { onInput, Left, Right, Up, Down, Box, render } from "@r-tui/ui"
 import React, { useEffect, useState } from "react"
-
 
 export default function App() {
   const [x, setX] = useState(0)
@@ -47,3 +47,8 @@ export default function App() {
     </Box>
   )
 }
+
+render(<App />, {
+  fps: 30,
+  trim: false,
+})

@@ -1,5 +1,6 @@
+import "./polyfill"
 import React, { useEffect, useState } from "react"
-import { Box } from "@r-tui/ui"
+import { Box, render } from "@r-tui/ui"
 
 export default function App() {
   const [count, setCount] = useState(0)
@@ -23,3 +24,7 @@ export default function App() {
     </Box>
   )
 }
+render(<App />, {
+  fps: 30,
+  trim: true,
+})
