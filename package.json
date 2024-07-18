@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.js",
   "scripts": {
-    "build": "esbuild ./src/*.tsx --bundle --outdir=dist --platform=node --format=esm --minify --define:process.env.NODE_ENV='\"production\"' --sourcemap",
-    "dev": "esbuild ./src/*.tsx --bundle --outdir=dist --platform=node --format=esm --minify --define:process.env.NODE_ENV='\"production\"' --sourcemap -w"
+    "build": "esbuild ./src/*.tsx --bundle --outdir=dist --platform=node --format=iife --minify --define:process.env.NODE_ENV='\"production\"' --sourcemap",
+    "dev": "esbuild ./src/*.tsx --bundle --outdir=dist --platform=node --format=iife --minify --define:process.env.NODE_ENV='\"production\"' --sourcemap -w"
   },
   "keywords": [],
   "author": "",

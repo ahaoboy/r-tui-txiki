@@ -1,7 +1,7 @@
 const encoder = new TextEncoder();
 const decoder = new TextDecoder()
 
-const write = (s: string) => tjs.stdout.write(encoder.encode(s));
+const write = async (s: string) => await tjs.stdout.write(encoder.encode(s));
 const stdout = {
   rows: tjs.stdout.height,
   columns: tjs.stdout.width,
@@ -34,6 +34,24 @@ export function spawn(exe: string, args: string[]) {
 
 
 let buf: null | string = ''
+
+const EscapeMap: Record<string, string> = {
+  '\x1b[A': "UP",
+  '\x1b[B': "DOWN",
+  '\x1b[C': "RIGHT",
+  '\x1b[D': "LEFT",
+}
+
+async function readToString(): Promise<string> {
+  const nread = await tjs.stdin.read(data);
+  if (!nread) {
+    return ''
+  }
+  const s = decoder.decode(data.subarray(0, nread))
+  if (EscapeMap[s]) return EscapeMap[s]
+  return s
+}
+
 const stdin = {
   setRawMode(mode: boolean) {
     tjs.stdin.setRawMode(mode)
@@ -49,24 +67,15 @@ const stdin = {
   async addListener(name: string, cb: (s: string) => void) {
     if (name === 'data') {
       while (true) {
-        const nread = await tjs.stdin.read(data);
-        console.log("buf: ", nread,)
-        if (nread) {
-          cb(new TextDecoder().decode(data.subarray(0, nread)))
-        } else {
-          throw new Error("stdin read error")
-        }
+        cb(await readToString())
       }
     }
 
     if (name === 'readable') {
       while (true) {
-        const nread = await tjs.stdin.read(data);
-        if (nread) {
-          const s = new TextDecoder().decode(data.subarray(0, nread))
-          buf = s;
-          cb(s)
-        }
+        const s = await readToString()
+        buf = s;
+        cb(s)
       }
     }
     throw new Error(`not support event: ${name}`)
