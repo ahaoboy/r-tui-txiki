@@ -7,6 +7,6 @@ An example running [r-tui](https://github.com/ahaoboy/r-tui) with [txiki](https:
 pnpm i
 pnpm run build
 
-tjs run ./dist/cmd.js
-tjs run ./dist/snake.js
+tjs run ./bundle/cmd.js
+tjs run ./bundle/snake.js
 ```

@@ -1,4 +1,4 @@
-import "./polyfill"
+import "txiki-node-polyfill"
 import React, { useEffect, useState } from "react"
 import { Box, render } from "@r-tui/ui"
 

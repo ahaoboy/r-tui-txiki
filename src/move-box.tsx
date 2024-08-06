@@ -1,4 +1,4 @@
-import "./polyfill"
+import "txiki-node-polyfill"
 import { onInput, Left, Right, Up, Down, Box, render } from "@r-tui/ui"
 import React, { useEffect, useState } from "react"
 

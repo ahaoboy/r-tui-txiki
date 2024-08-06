@@ -5,21 +5,23 @@
   "main": "dist/index.js",
   "types": "dist/index.d.js",
   "scripts": {
-    "build": "esbuild ./src/*.tsx --bundle --outdir=dist --platform=node --format=iife --minify --define:process.env.NODE_ENV='\"production\"' --sourcemap",
-    "dev": "esbuild ./src/*.tsx --bundle --outdir=dist --platform=node --format=iife --minify --define:process.env.NODE_ENV='\"production\"' --sourcemap -w"
+    "build": "tsx ./build.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@r-tui/ui": "0.1.6",
     "@r-tui/share": "0.1.6",
     "@r-tui/terminal": "0.1.6",
-    "react": "^18.3.1"
+    "@r-tui/ui": "0.1.6",
+    "react": "^18.3.1",
+    "txiki-node-polyfill": "^0.1.1"
   },
   "devDependencies": {
     "@txikijs/types": "^24.6.0",
+    "@types/node": "^22.1.0",
     "@types/react": "^18.3.3",
-    "esbuild": "^0.23.0"
+    "esbuild": "^0.23.0",
+    "tsx": "^4.16.5"
   }
 }

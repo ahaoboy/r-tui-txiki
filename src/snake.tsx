@@ -1,4 +1,4 @@
-import "./polyfill"
+import "txiki-node-polyfill"
 import { choice, type Color } from "@r-tui/share"
 import { getTerminalShape } from "@r-tui/terminal"
 import { onInput, Box, render, } from "@r-tui/ui"
