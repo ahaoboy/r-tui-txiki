@@ -21,5 +21,5 @@
     "sourceMap": false,
     "jsx": "react"
   },
-  "exclude": ["**/dist"]
+  "exclude": ["dist","bundle"]
 }
