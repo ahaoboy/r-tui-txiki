@@ -1,6 +1,6 @@
 import "txiki-node-polyfill"
 import React, { useEffect, useState } from "react"
-import { Box, render, useReadLine } from "@r-tui/ui"
+import { Box, render, useReadLine } from "@r-tui/react"
 import { spawn } from "txiki-node-polyfill"
 
 export default function App() {

@@ -1,6 +1,6 @@
 import "txiki-node-polyfill"
 import React, { useEffect, useState } from "react"
-import { Box, render } from "@r-tui/ui"
+import { Box, render } from "@r-tui/react"
 
 export default function App() {
   const [count, setCount] = useState(0)

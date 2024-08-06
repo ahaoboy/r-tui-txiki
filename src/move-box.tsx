@@ -1,5 +1,5 @@
 import "txiki-node-polyfill"
-import { onInput, Left, Right, Up, Down, Box, render } from "@r-tui/ui"
+import { onInput, Left, Right, Up, Down, Box, render } from "@r-tui/react"
 import React, { useEffect, useState } from "react"
 
 export default function App() {
