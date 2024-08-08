@@ -50,5 +50,8 @@ export default function App() {
 
 render(<App />, {
   fps: 30,
-  trim: false,
+  write: s => {
+    console.clear()
+    process.stdout.write(s.trimEnd())
+  }
 })

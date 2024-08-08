@@ -203,5 +203,8 @@ export default function SnakeGame() {
 
 render(<SnakeGame />, {
   fps: 30,
-  trim: false,
+  write: s => {
+    console.clear()
+    process.stdout.write(s.trimEnd())
+  }
 })
